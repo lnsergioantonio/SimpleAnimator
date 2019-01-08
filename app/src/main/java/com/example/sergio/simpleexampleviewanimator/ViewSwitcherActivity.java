@@ -1,5 +1,6 @@
 package com.example.sergio.simpleexampleviewanimator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,5 +33,9 @@ public class ViewSwitcherActivity extends AppCompatActivity {
     }
     public void previous(View v){
         viewSwitcher.showPrevious();
+    }
+    public void goToImageTextSwitcher(View v){
+        Intent intent = new Intent(this,TextImageSwitcherActivity.class);
+        startActivity(intent);
     }
 }

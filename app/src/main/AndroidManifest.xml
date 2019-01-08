@@ -21,7 +21,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ViewFlipperActivity" />
         </activity>
-        <activity android:name=".ViewSwitcherActivity"></activity>
+        <activity android:name=".ViewSwitcherActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ViewSwitcherActivity" />
+        </activity>
+        <activity android:name=".TextImageSwitcherActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TextImageSwitcherActivity" />
+        </activity>
     </application>
 
 </manifest>

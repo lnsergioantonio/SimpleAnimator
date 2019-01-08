@@ -32,11 +32,18 @@
             android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="With email or Social Neworks"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="100sp" />
+            <Button
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Go to TextImageSwitcherActivity"
+                android:onClick="goToImageTextSwitcher"
+                />
         </LinearLayout>
     </ViewSwitcher>
     <LinearLayout

@@ -1,9 +1,11 @@
 package com.example.sergio.simpleexampleviewanimator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ViewAnimator;
+import android.widget.ViewFlipper;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.btnNext).setOnClickListener(this);
         findViewById(R.id.btnPrevious).setOnClickListener(this);
+        findViewById(R.id.btnGoActivityFlipper).setOnClickListener(this);
     }
 
     @Override
@@ -29,7 +32,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(viewAnimator.getCurrentView().getId()!=R.id.one)
                     viewAnimator.showPrevious();
                 break;
-
+            case R.id.btnGoActivityFlipper:
+                Intent intent = new Intent(this,ViewFlipperActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 }

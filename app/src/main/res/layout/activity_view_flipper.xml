@@ -5,76 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
     android:weightSum="10"
-    >
-
-    <ViewAnimator
-        android:layout_weight="9"
-        android:id="@+id/viewAnimator"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:outAnimation="@android:anim/slide_out_right"
-        android:inAnimation="@android:anim/slide_in_left"
-        android:animateFirstView="true"
-        >
-
-        <LinearLayout
-            android:id="@+id/one"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="100sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/two"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="2"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="100sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/three"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="3"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="100sp" />
-
-            <Button
-                android:id="@+id/btnGoActivityFlipper"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Go to Activity ViewFlipper"
-                />
-        </LinearLayout>
-    </ViewAnimator>
-
+    tools:context=".ViewFlipperActivity">
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -83,17 +15,83 @@
         android:weightSum="2">
         <Button
             android:layout_weight="1"
-            android:id="@+id/btnPrevious"
+            android:id="@+id/vFBtnPrevious"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Previous"
+            android:onClick="previous"
             />
         <Button
             android:layout_weight="1"
-            android:id="@+id/btnNext"
+            android:id="@+id/vFBtnNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Next" />
+            android:text="Next"
+            android:onClick="next"
+            />
     </LinearLayout>
+    <ViewFlipper
+        android:layout_weight="9"
+        android:id="@+id/viewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:autoStart="false"
+        android:flipInterval="3000"
+        android:outAnimation="@android:anim/fade_out"
+        android:inAnimation="@android:anim/fade_in"
+        >
+        <LinearLayout
+            android:id="@+id/vfOne"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/vfTextView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="A"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="100sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/vfTwo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/vfTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="B"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="100sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/vfThree"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/vfTextView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="C"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="100sp" />
+            <Button
+                android:id="@+id/btnGoActivitySwitcher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Go to Activity Switcher"
+                android:onClick="goToSwitcher"/>
+        </LinearLayout>
+    </ViewFlipper>
 </LinearLayout>
